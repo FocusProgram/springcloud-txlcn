@@ -282,6 +282,6 @@ TC配置信息说明
 
 > tx-lcn.client.manager-address=127.0.0.1:8070 
 
-## 4.4 [springcloud继承tx-lcn源码](https://github.com/FocusProgram/springcloud-txlcn.git)
+## 4.4 [springcloud集成tx-lcn源码](https://github.com/FocusProgram/springcloud-txlcn.git)
 
 </font>
