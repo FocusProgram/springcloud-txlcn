@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: tx-client-b
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 114.55.34.44:8848
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://114.55.34.44:3306/txlcn-demo?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 20
+
+server:
+  port: 8668
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# \u5F00\u542F\u542F\u52A8LCN\u8D1F\u8F7D\u5747\u8861\u7B56\u7565
+tx-lcn:
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+# tm\u7684\u672C\u673A\u9ED8\u8BA4\u7AEF\u53E3
+client:
+  manager-address: 127.0.0.1:8050
